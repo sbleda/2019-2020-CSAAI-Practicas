@@ -1,0 +1,70 @@
+body{
+  background-image: url(foto.jpg);
+  background-size: cover;
+}
+
+.a{
+  background-color: #9ecfff;
+  width: 253px;
+  padding: 10px;
+  margin: auto;
+  border-width: 10px;
+  font-weight: bold;
+}
+
+
+#resultado {
+  padding: 10px;
+  border: solid;
+  border-color: #cccccc;
+  margin: 5px;
+  width: 220px;
+  background-color:black;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.cdigito{
+  padding: 10px;
+  border: solid;
+  border-color: #cccccc;
+  margin: 5px;
+  width: 50px;
+  background-image:linear-gradient(to bottom, #66ffcc, #388ce3);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.operaciones{
+  padding: 10px;
+  border: solid;
+  border-color: #cccccc;
+  margin: 5px;
+  width: 50px;
+  background-image:linear-gradient(to bottom, #66ffcc, #388ce3);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#igual{
+  padding: 10px;
+  border: solid;
+  border-color: #cccccc;
+  margin: 5px;
+  width: 50px;
+  background-image:linear-gradient(to bottom, #66ffcc, #388ce3);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#clear{
+  padding: 10px;
+  border: solid;
+  border-color: #cccccc;
+  margin: 5px;
+  width: 115px;
+  background-image:linear-gradient(to bottom, #66ffcc, #388ce3);
+  font-weight: bold;
+  font-size: 30px;
+}
