@@ -1,0 +1,101 @@
+#Info {
+  background-image:linear-gradient(to bottom, #99E0D6 0%, #C2D0F7 89%);
+  color:black;
+  padding:10px;
+  text-align: center;
+  border: 5px solid black;
+  margin: 5px;
+  width: 1645px;
+  display: inline-table;
+  font-size: 20px;
+}
+
+
+#académica {
+  background-image:linear-gradient(to bottom, #9999ff 13%, #ffccff 93%);
+  color:black;
+  padding:10px;
+  text-align: left;
+  border: 5px solid black;
+  margin: 5px;
+  width: 800px;
+  height: 300px;
+  display: inline-table;
+  font-size: 20px;
+}
+
+
+#experiencia {
+  background-image:linear-gradient(to bottom, #ccffff 0%, #ffcccc 108%);
+  color:black;
+  padding:10px;
+  text-align: left;
+  border: 5px solid black;
+  margin: 5px;
+  width: 800px;
+  height: 300px;
+  display: inline-table;
+  font-size: 20px;
+}
+
+
+#Habilidades {
+  background-image:linear-gradient(to bottom, #9999ff 13%, #ffccff 93%);
+  color:black;
+  padding:10px;
+  text-align: left;
+  border: 5px solid black;
+  margin: 5px;
+  width: 800px;
+  height: 300px;
+  display: inline-table;
+  font-size: 20px;
+}
+
+
+#Idiomas {
+  background-image:linear-gradient(to bottom, #ccffff 0%, #ffcccc 108%);
+  color:black;
+  padding:10px;
+  text-align: left;
+  border: 5px solid black;
+  margin: 5px;
+  width: 800px;
+  height: 300px;
+  display: inline-table;
+  font-size: 20px;
+}
+
+
+#Información {
+  background-image:linear-gradient(to bottom, #9999ff 13%, #ffccff 93%);
+  color:black;
+  padding:10px;
+  text-align: left;
+  border: 5px solid black;
+  margin: 5px;
+  width: 800px;
+  height: 600px;
+  display: inline-table;
+  font-size: 20px;
+}
+
+
+#Hobbies {
+  background-image:linear-gradient(to bottom, #ccffff 0%, #ffcccc 108%);
+  color:black;
+  padding:10px;
+  text-align: left;
+  border: 5px solid black;
+  margin: 5px;
+  width: 800px;
+  height: 600px;
+  display: inline-table;
+  font-size: 20px;
+}
+
+#gif{
+  vertical-align: middle;
+  width:100px;
+  height:100px;
+}
