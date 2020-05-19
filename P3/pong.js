@@ -77,7 +77,7 @@ function draw() {
   console.log(bola.x);
   if (bola.x==canvas.width){
     n +=1;
-    bola.x = 100;
+    bola.x = 500;
     bola.y = 200;
     bola.vx = 0;
     bola.vy = 0;
@@ -87,7 +87,7 @@ function draw() {
 
   if (bola.x==0){
     c +=1;
-    bola.x = 500;
+    bola.x = 100;
     bola.y = 200;
     bola.vx = 0;
     bola.vy = 0;
