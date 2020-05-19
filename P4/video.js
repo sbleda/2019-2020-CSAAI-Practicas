@@ -22,14 +22,24 @@ video3.poster="https://github.com/myTeachingURJC/2019-2020-CSAAI/raw/master/L10/
 //-- Obtener los botones
 const play = document.getElementById("play")
 const stop = document.getElementById("stop")
+const play2 = document.getElementById("play2")
+const stop2 = document.getElementById("stop2")
+const play3 = document.getElementById("play3")
+const stop3 = document.getElementById("stop3")
 
 //-- Función de retrollamada del botón de ver
 play.onclick = () => {
   console.log("Click!");
   video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"
   video1.play();
+};
+play2.onclick = () => {
+  console.log("Click!");
+
   video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4"
   video2.play();
+};
+play3.onclick = () => {
   video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4"
   video3.play();
 };
@@ -37,13 +47,23 @@ play.onclick = () => {
 //-- Funcion de retrollamada del boton de parar
 stop.onclick = () => {
   video1.pause();
-  video2.pause();
-  video3.pause();
-
   //-- Quitar la fuente de video, para que se muestre la
   //-- imagen definida en el atributo poster
   video1.src=null;
+}
+//-- Funcion de retrollamada del boton de parar
+stop2.onclick = () => {
+  video2.pause();
+  //-- Quitar la fuente de video, para que se muestre la
+  //-- imagen definida en el atributo poster
   video2.src=null;
+}
+
+//-- Funcion de retrollamada del boton de parar
+stop3.onclick = () => {
+  video3.pause();
+  //-- Quitar la fuente de video, para que se muestre la
+  //-- imagen definida en el atributo poster
   video3.src=null;
 
 }
