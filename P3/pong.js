@@ -11,6 +11,40 @@ console.log(`canvas: Anchura: ${canvas.width}, Altura: ${canvas.height}`);
 const ctx = canvas.getContext("2d");
 var c = 0;
 var n = 0;
+
+
+//-- Retrollamada de las teclas
+function teclas(){
+  window.onkeydown = (e) => {
+
+    switch (e.key) {
+      case "a":
+        raqI.v = raqI.v_ini;
+        break;
+      case "q":
+        raqI.v = raqI.v_ini * -1;
+        break;
+      case "p":
+        raqD.v = raqD.v_ini * -1;
+        break;
+      case "l":
+        raqD.v = raqD.v_ini;
+        break;
+      case " ":
+        if(bola.x == bola.x_ini && bola.y == bola.y_ini){
+          bola.vx = bola.vx_ini;
+          bola.vy = bola.vy_ini;
+        }
+        else if (bola.x == 500 && bola.y == bola.y_ini){
+          bola.vx = -bola.vx_ini;
+          bola.vy = -bola.vy_ini;
+        }
+      default:
+
+    }
+  }
+}
+
 //-- Pintar todos los objetos en el canvas
 function draw() {
 
@@ -45,8 +79,9 @@ function draw() {
     n +=1;
     bola.x = 100;
     bola.y = 200;
-    bola.vx = bola.vx_ini;
-    bola.vy = bola.vy_ini;
+    bola.vx = 0;
+    bola.vy = 0;
+    teclas();
   }
   ctx.fillText(n, 200, 80);
 
@@ -54,8 +89,9 @@ function draw() {
     c +=1;
     bola.x = 500;
     bola.y = 200;
-    bola.vx = -bola.vx_ini;
-    bola.vy = -bola.vy_ini;
+    bola.vx = 0;
+    bola.vy = 0;
+    teclas();
   }
   ctx.fillText(c, 340, 80);
 
@@ -121,33 +157,7 @@ raqD.init();
 setInterval(()=>{
   animacion();
 },16);
-
-//-- Retrollamada de las teclas
-window.onkeydown = (e) => {
-
-  switch (e.key) {
-    case "a":
-      raqI.v = raqI.v_ini;
-      break;
-    case "q":
-      raqI.v = raqI.v_ini * -1;
-      break;
-    case "p":
-      raqD.v = raqD.v_ini * -1;
-      break;
-    case "l":
-      raqD.v = raqD.v_ini;
-      break;
-    case " ":
-      //-- Llevar bola a su posicion incicial
-      bola.init();
-
-      //-- Darle velocidad
-      bola.vx = bola.vx_ini;
-      bola.vy = bola.vy_ini;
-    default:
-  }
-}
+teclas();
 
 //-- Retrollamada de la liberacion de teclas
 window.onkeyup = (e) => {
