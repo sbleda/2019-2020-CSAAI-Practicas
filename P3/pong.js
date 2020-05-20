@@ -9,9 +9,13 @@ console.log(`canvas: Anchura: ${canvas.width}, Altura: ${canvas.height}`);
 
 //-- Obtener el contexto para pintar en el canvas
 const ctx = canvas.getContext("2d");
+//-- Obtener Sonidos
+const sonido_raqueta = new Audio("pong-raqueta.mp3");
+const sonido_rebote = new Audio("pong-rebote.mp3");
+const sonido_gol = new Audio("pong-tanto.mp3");
+
 var c = 0;
 var n = 0;
-
 
 //-- Retrollamada de las teclas
 function teclas(){
@@ -31,6 +35,8 @@ function teclas(){
         raqD.v = raqD.v_ini;
         break;
       case " ":
+        sonido_raqueta.currentTime = 0;
+        sonido_raqueta.play();
         if(bola.x == bola.x_ini && bola.y == bola.y_ini){
           bola.vx = bola.vx_ini;
           bola.vy = bola.vy_ini;
@@ -61,7 +67,7 @@ function draw() {
   //-- Estilo de la linea: discontinua
   //-- Trazos de 10 pixeles, y 10 de separacion
   ctx.setLineDash([10, 10]);
-  ctx.strokeStyle = 'white';
+  ctx.strokeStyle = '#FF355E';
   ctx.lineWidth = 2;
   //-- Punto superior de la linea. Su coordenada x está en la mitad
   //-- del canvas
@@ -74,8 +80,9 @@ function draw() {
   //------ Dibujar el tanteo
   ctx.font = "100px Arial";
   ctx.fillStyle = "white";
-  console.log(bola.x);
   if (bola.x==canvas.width){
+    sonido_gol.currentTime = 0;
+    sonido_gol.play();
     n +=1;
     bola.x = 500;
     bola.y = 200;
@@ -86,6 +93,8 @@ function draw() {
   ctx.fillText(n, 200, 80);
 
   if (bola.x==0){
+    sonido_gol.currentTime = 0;
+    sonido_gol.play();
     c +=1;
     bola.x = 100;
     bola.y = 200;
@@ -113,21 +122,30 @@ function animacion()
   if (bola.x >= canvas.width || bola.x <= 0) {
     //-- Hay colisión. Cambiar el signo de la bola
     bola.vx = bola.vx * -1;
+    sonido_rebote.currentTime = 0;
+    sonido_rebote.play();
   }
 
   if (bola.y >= canvas.height || bola.y <=0){
-        bola.vy = bola.vy * -1;
+    bola.vy = bola.vy * -1;
+    sonido_rebote.currentTime = 0;
+    sonido_rebote.play();
   }
 
   //-- Comprobar si hay colisión con la raqueta izquierda
   if (bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
       bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
     bola.vx = bola.vx * -1;
+    sonido_rebote.currentTime = 0;
+    sonido_rebote.play();
+
   }
   //-- Comprobar si hay colisión con la raqueta derecha
   if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
       bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
     bola.vx = bola.vx * -1;
+    sonido_rebote.currentTime = 0;
+    sonido_rebote.play();
   }
 
   //-- Actualizar coordenada x de la bola, en funcion de
@@ -147,6 +165,9 @@ const bola = new Bola(ctx);
 //-- Crear las raquetas
 const raqI = new Raqueta(ctx);
 const raqD = new Raqueta(ctx);
+
+
+
 
 //-- Cambiar las coordenadas de la raqueta derecha
 raqD.x_ini = 540;
