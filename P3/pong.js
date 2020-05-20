@@ -11,7 +11,7 @@ console.log(`canvas: Anchura: ${canvas.width}, Altura: ${canvas.height}`);
 const ctx = canvas.getContext("2d");
 //-- Obtener Sonidos
 const sonido_raqueta = new Audio("pong-raqueta.mp3");
-const sonido_rebote = new Audio("pong-rebote.mp3");
+const sonido_rebote = new Audio("Bing_1.mp3");
 const sonido_gol = new Audio("pong-tanto.mp3");
 
 var c = 0;
@@ -122,7 +122,7 @@ function animacion()
   if (bola.x >= canvas.width || bola.x <= 0) {
     //-- Hay colisión. Cambiar el signo de la bola
     bola.vx = bola.vx * -1;
-    sonido_rebote.currentTime = 0;
+    sonido_rebote.currentTime = 1;
     sonido_rebote.play();
   }
 
