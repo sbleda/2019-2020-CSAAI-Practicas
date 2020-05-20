@@ -11,8 +11,8 @@ const play2 = document.getElementById("play2")
 const play3 = document.getElementById("play3")
 
 
-video.width=400;
-video.height=200;
+video.width=600;
+video.height=300;
 video1.width=200;
 video1.height=100;
 video2.width=200;
