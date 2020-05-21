@@ -156,6 +156,10 @@ gris.onclick = () => {
   deslizador.classList.add("mystyle");
   deslizador2.classList.add("mystyle");
   deslizador3.classList.add("mystyle");
+  range_value.classList.add("mystyle");
+  range_value2.classList.add("mystyle");
+  range_value3.classList.add("mystyle");
+
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
