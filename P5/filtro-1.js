@@ -39,11 +39,8 @@ img.onload = function () {
 color.onclick = () => {
   ctx.drawImage(img, 0,0);
   deslizador.classList.remove("mystyle");
-  deslizador.innerHTML = Rojo;
   deslizador2.classList.remove("mystyle");
-  deslizador.innerHTML = Verde;
   deslizador3.classList.remove("mystyle");
-  deslizador.innerHTML = Azul;
   range_value.classList.remove("mystyle");
   range_value2.classList.remove("mystyle");
   range_value3.classList.remove("mystyle");
