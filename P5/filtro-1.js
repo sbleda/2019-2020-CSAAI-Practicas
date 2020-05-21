@@ -37,6 +37,12 @@ img.onload = function () {
 };
 
 color.onclick = () => {
+  deslizador.classList.remove("mystyle");
+  deslizador2.classList.remove("mystyle");
+  deslizador3.classList.remove("mystyle");
+  range_value.classList.remove("mystyle");
+  range_value2.classList.remove("mystyle");
+  range_value3.classList.remove("mystyle");
   ctx.drawImage(img, 0,0);
   console.log("Click!");
 
