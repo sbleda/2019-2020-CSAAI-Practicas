@@ -37,12 +37,12 @@ img.onload = function () {
 };
 
 color.onclick = () => {
-  deslizador.classList.remove("mystyle");
-  deslizador2.classList.remove("mystyle");
-  deslizador3.classList.remove("mystyle");
-  range_value.classList.remove("mystyle");
-  range_value2.classList.remove("mystyle");
-  range_value3.classList.remove("mystyle");
+  deslizador.classList.add("mystyle2");
+  deslizador2.classList.add("mystyle2");
+  deslizador3.classList.add("mystyle2");
+  range_value.classList.add("mystyle2");
+  range_value2.classList.add("mystyle2");
+  range_value3.classList.add("mystyle2");
   ctx.drawImage(img, 0,0);
   console.log("Click!");
 
