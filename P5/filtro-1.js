@@ -37,13 +37,13 @@ img.onload = function () {
 };
 
 color.onclick = () => {
-  deslizador.classList.add("mystyle2");
-  deslizador2.classList.add("mystyle2");
-  deslizador3.classList.add("mystyle2");
-  range_value.classList.add("mystyle2");
-  range_value2.classList.add("mystyle2");
-  range_value3.classList.add("mystyle2");
   ctx.drawImage(img, 0,0);
+  deslizador.classList.remove("mystyle");
+  deslizador2.classList.remove("mystyle");
+  deslizador3.classList.remove("mystyle");
+  range_value.classList.remove("mystyle");
+  range_value2.classList.remove("mystyle");
+  range_value3.classList.remove("mystyle");
   console.log("Click!");
 
 
@@ -165,6 +165,12 @@ gris.onclick = () => {
   range_value.classList.add("mystyle");
   range_value2.classList.add("mystyle");
   range_value3.classList.add("mystyle");
+  deslizador.classList.remove("mystyle2");
+  deslizador2.classList.remove("mystyle2");
+  deslizador3.classList.remove("mystyle2");
+  range_value.classList.remove("mystyle2");
+  range_value2.classList.remove("mystyle2");
+  range_value3.classList.remove("mystyle2");
 
 
   //-- Situar la imagen original en el canvas
