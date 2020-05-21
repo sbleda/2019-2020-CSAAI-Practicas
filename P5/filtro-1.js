@@ -153,6 +153,9 @@ color.onclick = () => {
 gris.onclick = () => {
   console.log("Clack!");
   ctx.drawImage(img, 0,0);
+  deslizador.classList.add("mystyle");
+  deslizador2.classList.add("mystyle");
+  deslizador3.classList.add("mystyle");
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
@@ -163,17 +166,12 @@ gris.onclick = () => {
   //-- Obtener el array con todos los píxeles
   let data = imgData.data
   for (let i = 0; i < data.length; i+=4) {
-    r = data[i];
-    g = data[i+1];
-    b = data[i+2];
-    brillo = (3 * r + 4 * g + b)/8
+    brillo = (3 * data[i] + 4 * data[i+1] + data[i+2])/8
     data[i] = brillo;
     data[i+1] = brillo;
     data[i+2] = brillo;
-
     ctx.putImageData(imgData, 0, 0);
   }
-
 }
 
 console.log("Fin...");
