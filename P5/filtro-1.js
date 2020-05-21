@@ -47,6 +47,10 @@ color.onclick = () => {
   deslizador.value = 255;
   deslizador2.value = 255;
   deslizador3.value = 255;
+  range_value.innerHTML = deslizador.value;
+  range_value2.innerHTML = deslizador2.value;
+  range_value3.innerHTML = deslizador3.value;
+
   console.log("Click!");
 
 
