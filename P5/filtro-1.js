@@ -44,6 +44,9 @@ color.onclick = () => {
   range_value.classList.remove("mystyle");
   range_value2.classList.remove("mystyle");
   range_value3.classList.remove("mystyle");
+  deslizador.value = 255;
+  deslizador2.value = 255;
+  deslizador3.value = 255;
   console.log("Click!");
 
 
