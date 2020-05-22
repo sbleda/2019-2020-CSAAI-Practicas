@@ -17,6 +17,7 @@ const range_value3 = document.getElementById('range_value3');
 
 const color = document.getElementById("color");
 const gris = document.getElementById("gris");
+const negativo = document.getElementById("negativo");
 
 const colores = document.getElementById("colores");
 
@@ -183,5 +184,27 @@ gris.onclick = () => {
     ctx.putImageData(imgData, 0, 0);
   }
 }
+
+negativo.onclick = () => {
+  console.log("Clack!");
+  ctx.drawImage(img, 0,0);
+  colores.classList.add("mystyle")
+
+  //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+
+  //-- Obtener la imagen del canvas en pixeles
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+  //-- Obtener el array con todos los píxeles
+  let data = imgData.data
+  for (let i = 0; i < data.length; i+=4) {
+    data[i] = 255-data[i];
+    data[i+1] = 255-data[i+1];
+    data[i+2] = 255-data[i+2];
+    ctx.putImageData(imgData, 0, 0);
+  }
+}
+
 
 console.log("Fin...");
