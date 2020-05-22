@@ -19,6 +19,7 @@ const color = document.getElementById("color");
 const gris = document.getElementById("gris");
 const negativo = document.getElementById("negativo");
 const sepia = document.getElementById("sepia");
+const espejo = document.getElementById("espejo");
 
 const colores = document.getElementById("colores");
 
@@ -36,6 +37,7 @@ img.onload = function () {
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
+
   ctx.drawImage(img, 0,0);
 
   console.log("Imagen lista...");
@@ -44,6 +46,7 @@ img.onload = function () {
 color.onclick = () => {
   ctx.drawImage(img, 0,0);
   colores.classList.remove("mystyle");
+  img.classList.remove("scaled")
   deslizador.value = 255;
   deslizador2.value = 255;
   deslizador3.value = 255;
@@ -168,6 +171,8 @@ gris.onclick = () => {
   console.log("Clack!");
   ctx.drawImage(img, 0,0);
   colores.classList.add("mystyle")
+  img.classList.remove("scaled")
+
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
@@ -190,6 +195,8 @@ negativo.onclick = () => {
   console.log("Clack!");
   ctx.drawImage(img, 0,0);
   colores.classList.add("mystyle")
+  img.classList.remove("scaled")
+
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
@@ -211,6 +218,8 @@ sepia.onclick = () => {
   console.log("Clack!");
   ctx.drawImage(img, 0,0);
   colores.classList.add("mystyle")
+  img.classList.remove("scaled")
+
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
@@ -224,9 +233,16 @@ sepia.onclick = () => {
     data[i] = (data[i] * .393) + (data[i+1] * .769) + (data[i+2] * .189);
     data[i+1] = (data[i] * .349) + (data[i+1] * .686) + (data[i+2] * .168);
     data[i+2] = (data[i] * .272) + (data[i+1] * .534) + (data[i+2] * .131);
-
     ctx.putImageData(imgData, 0, 0);
   }
 }
 
+
+espejo.onclick = () => {
+  console.log("Clackaaa!");
+  colores.classList.add("mystyle");
+  ctx.drawImage(img, 0,0);
+  ctx.scale(-1,1);
+  ctx.drawImage(img, 0, 0);
+}
 console.log("Fin...");
