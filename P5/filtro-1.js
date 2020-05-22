@@ -18,6 +18,8 @@ const range_value3 = document.getElementById('range_value3');
 const color = document.getElementById("color");
 const gris = document.getElementById("gris");
 
+const colores = document.getElementById("colores");
+
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
 //-- lleva un tiempo. Sólo podemos acceder a ella una vez
@@ -38,18 +40,14 @@ img.onload = function () {
 
 color.onclick = () => {
   ctx.drawImage(img, 0,0);
-  deslizador.classList.remove("mystyle");
-  deslizador2.classList.remove("mystyle");
-  deslizador3.classList.remove("mystyle");
-  range_value.classList.remove("mystyle");
-  range_value2.classList.remove("mystyle");
-  range_value3.classList.remove("mystyle");
+  colores.classList.remove("mystyle");
   deslizador.value = 255;
   deslizador2.value = 255;
   deslizador3.value = 255;
   range_value.innerHTML = deslizador.value;
   range_value2.innerHTML = deslizador2.value;
   range_value3.innerHTML = deslizador3.value;
+
 
   console.log("Click!");
 
@@ -166,12 +164,7 @@ color.onclick = () => {
 gris.onclick = () => {
   console.log("Clack!");
   ctx.drawImage(img, 0,0);
-  deslizador.classList.add("mystyle");
-  deslizador2.classList.add("mystyle");
-  deslizador3.classList.add("mystyle");
-  range_value.classList.add("mystyle");
-  range_value2.classList.add("mystyle");
-  range_value3.classList.add("mystyle");
+  colores.classList.add("mystyle")
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
