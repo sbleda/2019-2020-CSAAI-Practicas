@@ -20,6 +20,8 @@ const gris = document.getElementById("gris");
 const negativo = document.getElementById("negativo");
 const sepia = document.getElementById("sepia");
 const espejo = document.getElementById("espejo");
+const invertir = document.getElementById("invertir");
+
 
 const colores = document.getElementById("colores");
 
@@ -46,7 +48,6 @@ img.onload = function () {
 color.onclick = () => {
   ctx.drawImage(img, 0,0);
   colores.classList.remove("mystyle");
-  img.classList.remove("scaled")
   deslizador.value = 255;
   deslizador2.value = 255;
   deslizador3.value = 255;
@@ -171,7 +172,6 @@ gris.onclick = () => {
   console.log("Clack!");
   ctx.drawImage(img, 0,0);
   colores.classList.add("mystyle")
-  img.classList.remove("scaled")
 
 
   //-- Situar la imagen original en el canvas
@@ -195,7 +195,6 @@ negativo.onclick = () => {
   console.log("Clack!");
   ctx.drawImage(img, 0,0);
   colores.classList.add("mystyle")
-  img.classList.remove("scaled")
 
 
   //-- Situar la imagen original en el canvas
@@ -218,7 +217,6 @@ sepia.onclick = () => {
   console.log("Clack!");
   ctx.drawImage(img, 0,0);
   colores.classList.add("mystyle")
-  img.classList.remove("scaled")
 
 
   //-- Situar la imagen original en el canvas
@@ -242,7 +240,17 @@ espejo.onclick = () => {
   console.log("Clackaaa!");
   colores.classList.add("mystyle");
   ctx.drawImage(img, 0,0);
+  ctx.translate(canvas.width,0)
   ctx.scale(-1,1);
+  ctx.drawImage(img, 0, 0);
+}
+
+invertir.onclick = () => {
+  console.log("Clackaaa!");
+  colores.classList.add("mystyle");
+  ctx.drawImage(img, 0,0);
+  ctx.translate(0, canvas.height)
+  ctx.scale(1,-1);
   ctx.drawImage(img, 0, 0);
 }
 console.log("Fin...");
