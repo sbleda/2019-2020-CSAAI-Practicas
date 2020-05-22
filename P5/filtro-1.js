@@ -18,6 +18,7 @@ const range_value3 = document.getElementById('range_value3');
 const color = document.getElementById("color");
 const gris = document.getElementById("gris");
 const negativo = document.getElementById("negativo");
+const sepia = document.getElementById("sepia");
 
 const colores = document.getElementById("colores");
 
@@ -206,5 +207,26 @@ negativo.onclick = () => {
   }
 }
 
+sepia.onclick = () => {
+  console.log("Clack!");
+  ctx.drawImage(img, 0,0);
+  colores.classList.add("mystyle")
+
+  //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+
+  //-- Obtener la imagen del canvas en pixeles
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+  //-- Obtener el array con todos los píxeles
+  let data = imgData.data
+  for (let i = 0; i < data.length; i+=4) {
+    data[i] = (data[i] * .393) + (data[i+1] * .769) + (data[i+2] * .189);
+    data[i+1] = (data[i] * .349) + (data[i+1] * .686) + (data[i+2] * .168);
+    data[i+2] = (data[i] * .272) + (data[i+1] * .534) + (data[i+2] * .131);
+
+    ctx.putImageData(imgData, 0, 0);
+  }
+}
 
 console.log("Fin...");
