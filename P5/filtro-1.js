@@ -20,6 +20,7 @@ const gris = document.getElementById("gris");
 
 const colores = document.getElementById("colores");
 
+
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
 //-- lleva un tiempo. Sólo podemos acceder a ella una vez

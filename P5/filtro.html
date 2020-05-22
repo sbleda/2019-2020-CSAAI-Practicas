@@ -7,22 +7,26 @@
     <link rel="stylesheet" href="filtro.css">
   </head>
   <body>
-    <canvas id="canvas"></canvas>
+    <span style="margin-right: 300px ;font-size:50px;">Imagen original</span>
+    <span style="font-size: 50px;">Imagen modificada</span>
     <img src="FPGA.jpg" id="imagesrc">
+    <canvas id="canvas"></canvas>
     <br>
+    <br>
+    <button class="boton" id="color">color</button>
     <button class="boton" id="gris">gris</button>
-    <div class="colores">
-      <button class="boton" id="color">color</button>
-      <br>
+    <div id="colores" class="mystyle">
       <input type="range" id="deslizador" min="0" max="255" value="255"></input>
-      <p id="range_value">00</p>
       <span>Rojo</span>
+      <p id="range_value">00</p>
+      <br>
       <input type="range" id="deslizador2" min="0" max="255" value="255"></input>
-      <p id="range_value2">00</p>
       <span>Verde</span>
+      <p id="range_value2">00</p>
+      <br>
       <input type="range" id="deslizador3" min="0" max="255" value="255"></input>
-      <p id="range_value3">00</p>
       <span>Azul</span>
+      <p id="range_value3">00</p>
     </div>
   </body>
 </html>
