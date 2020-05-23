@@ -14,41 +14,93 @@ const sonido_raqueta = new Audio("pong-raqueta.mp3");
 const sonido_rebote = new Audio("Bing_1.mp3");
 const sonido_gol = new Audio("pong-tanto.mp3");
 
+const auto = document.getElementById('auto');
+const manual = document.getElementById('manual');
+const facil = document.getElementById('facil');
+const medio = document.getElementById('medio');
+const dificil = document.getElementById('dificil');
+
+
+facil.classList.add("niveles");
+dificil.classList.add("niveles");
+medio.classList.add("niveles");
+
+
 var c = 0;
 var n = 0;
 
-//-- Retrollamada de las teclas
 function teclas(){
-  window.onkeydown = (e) => {
-
-    switch (e.key) {
-      case "a":
-        raqI.v = raqI.v_ini;
-        break;
-      case "q":
-        raqI.v = raqI.v_ini * -1;
-        break;
-      case "p":
-        raqD.v = raqD.v_ini * -1;
-        break;
-      case "l":
-        raqD.v = raqD.v_ini;
-        break;
-      case " ":
-        sonido_raqueta.currentTime = 0;
-        sonido_raqueta.play();
-        if(bola.x == bola.x_ini && bola.y == bola.y_ini){
-          bola.vx = bola.vx_ini;
-          bola.vy = bola.vy_ini;
-        }
-        else if (bola.x == 500 && bola.y == bola.y_ini){
-          bola.vx = -bola.vx_ini;
-          bola.vy = -bola.vy_ini;
-        }
-      default:
-
+  manual.onclick = () => {
+    facil.classList.add("niveles");
+    dificil.classList.add("niveles");
+    medio.classList.add("niveles");
+    window.onkeydown = (e) => {
+      switch (e.key) {
+        case "a":
+          raqI.v = raqI.v_ini;
+          break;
+        case "q":
+          raqI.v = raqI.v_ini * -1;
+          break;
+        case "p":
+          raqD.v = raqD.v_ini * -1;
+          break;
+        case "l":
+          raqD.v = raqD.v_ini;
+          break;
+        case " ":
+          sonido_raqueta.currentTime = 0;
+          sonido_raqueta.play();
+          if(bola.x == bola.x_ini && bola.y == bola.y_ini){
+            bola.vx = bola.vx_ini;
+            bola.vy = bola.vy_ini;
+          }
+          else if (bola.x == 500 && bola.y == bola.y_ini){
+            bola.vx = -bola.vx_ini;
+            bola.vy = -bola.vy_ini;
+          }
+        default:
+      }
     }
   }
+  auto.onclick = () => {
+    facil.classList.remove("niveles");
+    dificil.classList.remove("niveles");
+    medio.classList.remove("niveles");
+    window.onkeydown = (e) => {
+      switch (e.key) {
+        case "p":
+          raqD.v = raqD.v_ini * -1;
+          break;
+        case "l":
+          raqD.v = raqD.v_ini;
+          break;
+        case " ":
+          sonido_raqueta.currentTime = 0;
+          sonido_raqueta.play();
+          if(bola.x == bola.x_ini && bola.y == bola.y_ini){
+            bola.vx = bola.vx_ini;
+            bola.vy = bola.vy_ini;
+          }
+          else if (bola.x == 500 && bola.y == bola.y_ini){
+            bola.vx = -bola.vx_ini;
+            bola.vy = -bola.vy_ini;
+          }
+        default:
+      }
+    }
+    animate();
+  }
+}
+
+function animate() {
+
+  if (raqI.y < 400 || raqI.y > 0){
+     raqI.y = bola.y*0.5;
+   }
+   requestAnimationFrame(function() {
+      animate();
+   });
 }
 
 //-- Pintar todos los objetos en el canvas
