@@ -20,12 +20,11 @@ const facil = document.getElementById('facil');
 const medio = document.getElementById('medio');
 const dificil = document.getElementById('dificil');
 
-
 facil.classList.add("niveles");
 dificil.classList.add("niveles");
 medio.classList.add("niveles");
 
-
+var velocidad;
 var c = 0;
 var n = 0;
 
@@ -89,18 +88,30 @@ function teclas(){
         default:
       }
     }
-    animate();
+    facil.onclick = () => {
+      velo = 0.7;
+      animate();
+    }
+    medio.onclick = () => {
+      velo = 0.85;
+      animate();
+    }
+    dificil.onclick = () => {
+      velo = 1;
+      animate();
+    }
   }
 }
 
 function animate() {
 
   if (raqI.y < 400 || raqI.y > 0){
-     raqI.y = bola.y*0.5;
-   }
-   requestAnimationFrame(function() {
-      animate();
-   });
+    raqI.y = bola.y*velo;
+  }
+  requestAnimationFrame(function() {
+    animate();
+  });
+
 }
 
 //-- Pintar todos los objetos en el canvas
