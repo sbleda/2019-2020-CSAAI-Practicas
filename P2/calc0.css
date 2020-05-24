@@ -5,7 +5,7 @@ body{
 
 .a{
   background-color: #9ecfff;
-  width: 253px;
+  width: 320px;
   padding: 10px;
   margin: auto;
   border-width: 10px;
@@ -18,7 +18,7 @@ body{
   border: solid;
   border-color: #cccccc;
   margin: 5px;
-  width: 220px;
+  width: 279px;
   background-color:black;
   color: white;
   font-weight: bold;
@@ -30,7 +30,7 @@ body{
   border: solid;
   border-color: #cccccc;
   margin: 5px;
-  width: 50px;
+  width: 65px;
   background-image:linear-gradient(to bottom, #66ffcc, #388ce3);
   font-weight: bold;
   font-size: 30px;
@@ -41,7 +41,7 @@ body{
   border: solid;
   border-color: #cccccc;
   margin: 5px;
-  width: 50px;
+  width: 65px;
   background-image:linear-gradient(to bottom, #66ffcc, #388ce3);
   font-weight: bold;
   font-size: 30px;
@@ -52,7 +52,7 @@ body{
   border: solid;
   border-color: #cccccc;
   margin: 5px;
-  width: 50px;
+  width: 65px;
   background-image:linear-gradient(to bottom, #66ffcc, #388ce3);
   font-weight: bold;
   font-size: 30px;
@@ -63,7 +63,7 @@ body{
   border: solid;
   border-color: #cccccc;
   margin: 5px;
-  width: 115px;
+  width: 144px;
   background-image:linear-gradient(to bottom, #66ffcc, #388ce3);
   font-weight: bold;
   font-size: 30px;

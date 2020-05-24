@@ -37,8 +37,6 @@ function operacion(botonop){
   resultado.innerHTML += botonop.value;
 }
 
-
-
 //-- Evaluar la expresion
 igual.onclick = () => {
   resultado.innerHTML = eval(resultado.innerHTML);
