@@ -244,8 +244,9 @@ function imagen () {
   desenfoque.onclick = () => {
     console.log("desenfoque click")
     colores.classList.add("mystyle");
-    img.classList.add("desenfocar");
-    ctx.drawImage(img, 0, 0);
+    img2=img;
+    img2.classList.add("desenfocar");
+    ctx.drawImage(img2, 0, 0);
 
   }
 }
