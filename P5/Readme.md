@@ -7,5 +7,5 @@ Hay 3 imagenes a elegir, una vez elegida, la imagen origina quedara en la izquie
 Está el funcionamiento básico, pasar a grises y modificar las componentes de color con deslizadores que solo apareceran una vez pulsado el botón de color.
 
 Mejoras:
-He añadido un botón para aplicar a la imagen un filtro sepia y otro para aplicar un filtro negativo (tardan bastante en cargar pero al final cargan)
+He añadido un botón para aplicar a la imagen un filtro sepia y otro para aplicar un filtro negativo (tardan bastante en cargar pero al final cargan).
 También hay dos botones más, espejo e invertir, que se aplican sobre la imagen original, y sobre ellos podrás aplicar los filtros anteriores (una vez invertida la iamgen puedes aplicar por ejemplo filtros de color, la imagen seguirá invertida).
