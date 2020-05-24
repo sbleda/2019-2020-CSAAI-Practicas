@@ -2,7 +2,7 @@
 
 https://sbleda.github.io/2019-2020-CSAAI-Practicas/P5/
 
-Hay 3 imagenes a elegir, una vez elegida, la imagen origina quedara en la izquierda y la que vamos a modificar a la derecha.
+Hay 3 imagenes a elegir, una vez elegida, la imagen original quedará en la izquierda y la que vamos a modificar a la derecha.
 
 Está el funcionamiento básico, pasar a grises y modificar las componentes de color con deslizadores que solo apareceran una vez pulsado el botón de color.
 
