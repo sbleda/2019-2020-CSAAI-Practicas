@@ -23,8 +23,6 @@ const sepia = document.getElementById("sepia");
 const espejo = document.getElementById("espejo");
 const invertir = document.getElementById("invertir");
 const contraste = document.getElementById("contraste");
-const desenfoque = document.getElementById("desenfoque");
-
 
 const colores = document.getElementById("colores");
 
@@ -55,7 +53,6 @@ function imagen () {
     console.log("color click")
     ctx.drawImage(img, 0,0);
     colores.classList.remove("mystyle");
-    img.classList.remove("desenfocar");
     deslizador.value = 255;
     deslizador2.value = 255;
     deslizador3.value = 255;
@@ -149,7 +146,6 @@ function imagen () {
     console.log("gris click")
     ctx.drawImage(img, 0,0);
     colores.classList.add("mystyle")
-    img.classList.remove("desenfocar");
 
     //-- Obtener la imagen del canvas en pixeles
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -169,7 +165,6 @@ function imagen () {
     console.log("negativo click")
     ctx.drawImage(img, 0,0);
     colores.classList.add("mystyle")
-    img.classList.remove("desenfocar");
 
     //-- Obtener la imagen del canvas en pixeles
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -188,7 +183,6 @@ function imagen () {
     console.log("sepia click")
     ctx.drawImage(img, 0,0);
     colores.classList.add("mystyle")
-    img.classList.remove("desenfocar");
 
     //-- Obtener la imagen del canvas en pixeles
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -207,7 +201,6 @@ function imagen () {
     console.log("contraste click")
     ctx.drawImage(img, 0,0);
     colores.classList.add("mystyle")
-    img.classList.remove("desenfocar");
 
     //-- Obtener la imagen del canvas en pixeles
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -226,8 +219,7 @@ function imagen () {
   espejo.onclick = () => {
     console.log("espejo click")
     colores.classList.add("mystyle");
-    img.classList.remove("desenfocar");
-    ctx.translate(canvas.width,0)
+        ctx.translate(canvas.width,0)
     ctx.scale(-1,1);
     ctx.drawImage(img, 0, 0);
   }
@@ -235,19 +227,9 @@ function imagen () {
   invertir.onclick = () => {
     console.log("invertir click")
     colores.classList.add("mystyle");
-    img.classList.remove("desenfocar");
-    ctx.translate(0, canvas.height)
+        ctx.translate(0, canvas.height)
     ctx.scale(1,-1);
     ctx.drawImage(img, 0, 0);
-  }
-
-  desenfoque.onclick = () => {
-    console.log("desenfoque click")
-    colores.classList.add("mystyle");
-    img2=img;
-    img2.classList.add("desenfocar");
-    ctx.drawImage(img2, 0, 0);
-
   }
 }
 
