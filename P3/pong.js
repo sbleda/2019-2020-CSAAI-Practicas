@@ -24,7 +24,6 @@ facil.classList.add("niveles");
 dificil.classList.add("niveles");
 medio.classList.add("niveles");
 
-var velocidad;
 var c = 0;
 var n = 0;
 
@@ -97,15 +96,14 @@ function teclas(){
       animate();
     }
     dificil.onclick = () => {
-      velo = 1;
+      velo = 0.9;
       animate();
     }
   }
 }
 
 function animate() {
-
-  if (raqI.y < 400 || raqI.y > 0){
+  if (raqI.y <= 400 && raqI.y >= 0){
     raqI.y = bola.y*velo;
   }
   requestAnimationFrame(function() {
