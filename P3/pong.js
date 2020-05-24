@@ -10,9 +10,10 @@ console.log(`canvas: Anchura: ${canvas.width}, Altura: ${canvas.height}`);
 //-- Obtener el contexto para pintar en el canvas
 const ctx = canvas.getContext("2d");
 //-- Obtener Sonidos
+const sonido_saque = new Audio("pong-tanto.mp3");
 const sonido_raqueta = new Audio("pong-raqueta.mp3");
 const sonido_rebote = new Audio("Bing_1.mp3");
-const sonido_gol = new Audio("pong-tanto.mp3");
+const sonido_gol = new Audio("pong.mp3");
 
 const auto = document.getElementById('auto');
 const manual = document.getElementById('manual');
@@ -47,8 +48,8 @@ function teclas(){
           raqD.v = raqD.v_ini;
           break;
         case " ":
-          sonido_raqueta.currentTime = 0;
-          sonido_raqueta.play();
+          sonido_saque.currentTime = 0;
+          sonido_saque.play();
           if(bola.x == bola.x_ini && bola.y == bola.y_ini){
             bola.vx = bola.vx_ini;
             bola.vy = bola.vy_ini;
@@ -74,8 +75,8 @@ function teclas(){
           raqD.v = raqD.v_ini;
           break;
         case " ":
-          sonido_raqueta.currentTime = 0;
-          sonido_raqueta.play();
+          sonido_saque.currentTime = 0;
+          sonido_saque.play();
           if(bola.x == bola.x_ini && bola.y == bola.y_ini){
             bola.vx = bola.vx_ini;
             bola.vy = bola.vy_ini;
@@ -197,16 +198,16 @@ function animacion()
   if (bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
       bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
     bola.vx = bola.vx * -1;
-    sonido_rebote.currentTime = 0;
-    sonido_rebote.play();
+    sonido_raqueta.currentTime = 0;
+    sonido_raqueta.play();
 
   }
   //-- Comprobar si hay colisión con la raqueta derecha
   if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
       bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
     bola.vx = bola.vx * -1;
-    sonido_rebote.currentTime = 0;
-    sonido_rebote.play();
+    sonido_raqueta.currentTime = 0;
+    sonido_raqueta.play();
   }
 
   //-- Actualizar coordenada x de la bola, en funcion de
