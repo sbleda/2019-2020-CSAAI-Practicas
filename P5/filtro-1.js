@@ -15,21 +15,23 @@ const range_value = document.getElementById('range_value');
 const range_value2 = document.getElementById('range_value2');
 const range_value3 = document.getElementById('range_value3');
 
+//-- filtros
 const color = document.getElementById("color");
 const gris = document.getElementById("gris");
 const negativo = document.getElementById("negativo");
 const sepia = document.getElementById("sepia");
 const espejo = document.getElementById("espejo");
 const invertir = document.getElementById("invertir");
+const contraste = document.getElementById("contraste");
+const desenfoque = document.getElementById("desenfoque");
 
 
 const colores = document.getElementById("colores");
 
+//--imagenes
 const img1 = document.getElementById('img1');
 const img2 = document.getElementById('img2');
 const img3 = document.getElementById('img3');
-
-
 
 function imagen () {
   //-- Función de retrollamada de imagen cargada
@@ -45,13 +47,12 @@ function imagen () {
 
     //-- Situar la imagen original en el canvas
     //-- No se han hecho manipulaciones todavia
-
     ctx.drawImage(img, 0,0);
-
     console.log("Imagen lista...");
   };
 
   color.onclick = () => {
+    console.log("color click")
     ctx.drawImage(img, 0,0);
     colores.classList.remove("mystyle");
     deslizador.value = 255;
@@ -61,16 +62,11 @@ function imagen () {
     range_value2.innerHTML = deslizador2.value;
     range_value3.innerHTML = deslizador3.value;
 
-
-    console.log("Click!");
-
-
     //-- Funcion de retrollamada del deslizador
     deslizador.oninput = () => {
       ctx.drawImage(img, 0,0);
       //-- Mostrar el nuevo valor del deslizador rojo
       range_value.innerHTML = deslizador.value;
-
 
       //-- Obtener la imagen del canvas en pixeles
       let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -78,12 +74,8 @@ function imagen () {
       //-- Obtener el array con todos los píxeles
       let data = imgData.data
 
-      //-- Obtener el umbral de rojo del desliador
-
-
       //-- Filtrar la imagen según el nuevo umbral
       for (let i = 0; i < data.length; i+=4) {
-
         if (data[i] > deslizador.value){
           data[i] = deslizador.value;
         }
@@ -93,12 +85,9 @@ function imagen () {
         if (data[i+2] > deslizador3.value) {
           data[i+2] = deslizador3.value;
         }
-
       }
-
       //-- Poner la imagen modificada en el canvas
       ctx.putImageData(imgData, 0, 0);
-
     }
 
     deslizador2.oninput = () => {
@@ -106,21 +95,14 @@ function imagen () {
       //-- Mostrar el nuevo valor del deslizador2
       range_value2.innerHTML = deslizador2.value;
 
-      //-- Situar la imagen original en el canvas
-      //-- No se han hecho manipulaciones todavia
-
       //-- Obtener la imagen del canvas en pixeles
       let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
       //-- Obtener el array con todos los píxeles
       let data = imgData.data
 
-      //-- Obtener el umbral de rojo del desliador
-
-
       //-- Filtrar la imagen según el nuevo umbral
       for (let i = 0; i < data.length; i+=4) {
-
         if (data[i+1] > deslizador2.value){
           data[i+1] = deslizador2.value;
        }
@@ -133,16 +115,11 @@ function imagen () {
       }
       //-- Poner la imagen modificada en el canvas
       ctx.putImageData(imgData, 0, 0);
-
     }
-
     deslizador3.oninput = () => {
       ctx.drawImage(img, 0,0);
       //-- Mostrar el nuevo valor del deslizador3
       range_value3.innerHTML = deslizador3.value;
-
-      //-- Situar la imagen original en el canvas
-      //-- No se han hecho manipulaciones todavia
 
       //-- Obtener la imagen del canvas en pixeles
       let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -150,12 +127,8 @@ function imagen () {
       //-- Obtener el array con todos los píxeles
       let data = imgData.data
 
-      //-- Obtener el umbral de rojo del desliador
-
-
       //-- Filtrar la imagen según el nuevo umbral
       for (let i = 0; i < data.length; i+=4) {
-
         if (data[i+2] > deslizador3.value){
           data[i+2] = deslizador3.value;
         }
@@ -165,23 +138,16 @@ function imagen () {
         if (data[i] > deslizador.value) {
           data[i] = deslizador.value;
         }
-
       }
-
       //-- Poner la imagen modificada en el canvas
       ctx.putImageData(imgData, 0, 0);
-
     }
-
   }
+
   gris.onclick = () => {
-    console.log("Clack!");
+    console.log("gris click")
     ctx.drawImage(img, 0,0);
     colores.classList.add("mystyle")
-
-
-    //-- Situar la imagen original en el canvas
-    //-- No se han hecho manipulaciones todavia
 
     //-- Obtener la imagen del canvas en pixeles
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -198,13 +164,9 @@ function imagen () {
   }
 
   negativo.onclick = () => {
-    console.log("Clack!");
+    console.log("negativo click")
     ctx.drawImage(img, 0,0);
     colores.classList.add("mystyle")
-
-
-    //-- Situar la imagen original en el canvas
-    //-- No se han hecho manipulaciones todavia
 
     //-- Obtener la imagen del canvas en pixeles
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -220,13 +182,9 @@ function imagen () {
   }
 
   sepia.onclick = () => {
-    console.log("Clack!");
+    console.log("sepia click")
     ctx.drawImage(img, 0,0);
     colores.classList.add("mystyle")
-
-
-    //-- Situar la imagen original en el canvas
-    //-- No se han hecho manipulaciones todavia
 
     //-- Obtener la imagen del canvas en pixeles
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -241,9 +199,27 @@ function imagen () {
     }
   }
 
+  contraste.onclick = () => {
+    console.log("contraste click")
+    ctx.drawImage(img, 0,0);
+    colores.classList.add("mystyle")
+
+    //-- Obtener la imagen del canvas en pixeles
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+      //-- Obtener el array con todos los píxeles
+    let data = imgData.data
+    for (let i = 0; i < data.length; i+=4) {
+      factor = ( 259 * ( 100 + 255 ) ) / ( 255 * ( 259 - 100 ) );
+      data[i] = factor * (data[i] - 128 ) + 128;
+      data[i+1] = factor * (data[i+1] - 128 ) + 128;
+      data[i+2] = factor * (data[i+2] - 128 ) + 128;
+      ctx.putImageData(imgData, 0, 0);
+    }
+  }
 
   espejo.onclick = () => {
-    console.log("Clackaaa!");
+    console.log("espejo click")
     colores.classList.add("mystyle");
     ctx.translate(canvas.width,0)
     ctx.scale(-1,1);
@@ -251,11 +227,17 @@ function imagen () {
   }
 
   invertir.onclick = () => {
-    console.log("Clackaaa!");
+    console.log("invertir click")
     colores.classList.add("mystyle");
     ctx.translate(0, canvas.height)
     ctx.scale(1,-1);
     ctx.drawImage(img, 0, 0);
+  }
+
+  desenfoque.onclick = () => {
+    console.log("desenfoque click")
+    colores.classList.add("mystyle");
+    ctx.classList.add("desenfocar");
     ctx.drawImage(img, 0, 0);
 
   }
@@ -278,8 +260,5 @@ img3.onclick = () => {
   img.src = "city.jpg"
   imagen();
 }
-
-
-
 
 console.log("Fin...");

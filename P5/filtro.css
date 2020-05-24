@@ -3,7 +3,6 @@
   margin-right: 250px;
 }
 
-
 .boton{
   padding: 10px;
   font-weight: 600;
@@ -12,11 +11,14 @@
   background-color: #1883ba;
   border-radius: 6px;
   border: 2px solid #0016b0;
-  margin-right: 120px;
+  margin-right: 60px;
   margin-bottom: 50px;
 }
 
-
 .mystyle{
  display: none;
+}
+
+.desenfocar{
+  filter: blur(6px);
 }

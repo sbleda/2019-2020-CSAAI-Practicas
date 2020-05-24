@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Filtro 5</title>
+    <script src="filtro-1.js" defer></script>
+    <link rel="stylesheet" href="filtro.css">
+  </head>
+  <body>
+    <span style="margin-right: 300px ;font-size:50px;">Imagen original</span>
+    <span style="font-size: 50px;">Imagen modificada</span>
+    <img id="img"></img>
+    <canvas id="canvas"></canvas>
+    <br>
+    <br>
+    <button class="boton" id="img1">Imagen 1</button>
+    <button class="boton" id="img2">Imagen 2</button>
+    <button class="boton" id="img3">Imagen 3</button>
+    <br>
+    <button class="boton" id="color">color</button>
+    <button class="boton" id="gris">gris</button>
+    <button class="boton" id="negativo">negativo</button>
+    <button class="boton" id="sepia">sepia</button>
+    <button class="boton" id="espejo">espejo</button>
+    <button class="boton" id="invertir">invertir</button>
+    <button class="boton" id="contraste">aumentar contraste</button>
+    <button class="boton" id="desenfoque">desenfoque</button>
+    <div id="colores" class="mystyle">
+      <input type="range" id="deslizador" min="0" max="255" value="255"></input>
+      <span>Rojo</span>
+      <p id="range_value">00</p>
+      <br>
+      <input type="range" id="deslizador2" min="0" max="255" value="255"></input>
+      <span>Verde</span>
+      <p id="range_value2">00</p>
+      <br>
+      <input type="range" id="deslizador3" min="0" max="255" value="255"></input>
+      <span>Azul</span>
+      <p id="range_value3">00</p>
+    </div>
+  </body>
+</html>
