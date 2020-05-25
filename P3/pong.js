@@ -165,15 +165,10 @@ function draw() {
     teclas();
   }
   ctx.fillText(c, 340, 80);
-
 }
 
 //---- Bucle principal de la animación
-function animacion()
-{
-
-  //-- Actualizar las posiciones de los objetos móviles
-
+function animacion(){
   //-- Actualizar la raqueta con la velocidad actual
   raqI.update();
   raqD.update();
@@ -200,8 +195,8 @@ function animacion()
     bola.vx = bola.vx * -1;
     sonido_raqueta.currentTime = 0;
     sonido_raqueta.play();
-
   }
+
   //-- Comprobar si hay colisión con la raqueta derecha
   if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
       bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
@@ -228,9 +223,6 @@ const bola = new Bola(ctx);
 const raqI = new Raqueta(ctx);
 const raqD = new Raqueta(ctx);
 
-
-
-
 //-- Cambiar las coordenadas de la raqueta derecha
 raqD.x_ini = 540;
 raqD.y_ini = 300;
@@ -245,10 +237,11 @@ teclas();
 //-- Retrollamada de la liberacion de teclas
 window.onkeyup = (e) => {
   if (e.key == "a" || e.key == "q"){
-    //-- Quitar velocidad de la raqueta
+    //-- Quitar velocidad de la raqueta izq
     raqI.v = 0;
   }
-
+  
+  //-- Quitar velocidad de la raqueta derecha
   if (e.key == "p" || e.key == "l") {
     raqD.v = 0;
   }
