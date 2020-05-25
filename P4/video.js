@@ -6,7 +6,6 @@ const video1 = document.getElementById("video1")
 const video2 = document.getElementById("video2")
 const video3 = document.getElementById("video3")
 const img = document.getElementById("img")
-const videos = document.getElementById("videos")
 
 //-- Obtener los botones
 const play1 = document.getElementById("play1")
@@ -16,7 +15,6 @@ const play3 = document.getElementById("play3")
 const play4 = document.getElementById("play4")
 
 const manual = document.getElementById("manual")
-const auto = document.getElementById("auto")
 
 video.width=600;
 video.height=300;
@@ -95,26 +93,6 @@ manual.onclick = () => {
   };
 }
 
-auto.onclick = () => {
-  play1.classList.add("botones");
-  play2.classList.add("botones");
-  play3.classList.add("botones");
-  play4.classList.add("botones");
-
-  console.log("Click automático")
-  video.pause();
-  video.poster="https://github.com/myTeachingURJC/2019-2020-CSAAI/raw/master/L10/test.png";
-
-  //-- Quitar la fuente de video, para que se muestre la
-  //-- imagen definida en el atributo poster
-  video.src=null;
-  video3.classList.remove("mystyle");
-  video1.classList.remove("mystyle");
-  video2.classList.remove("mystyle");
-  img.classList.remove("mystyle");
-}
-//-- Funcion de retrollamada del boton de parar
-
 stop.onclick = () => {
   play1.classList.add("botones");
   play2.classList.add("botones");
@@ -126,6 +104,8 @@ stop.onclick = () => {
   //-- Quitar la fuente de video, para que se muestre la
   //-- imagen definida en el atributo poster
   video.src=null;
+
+
   video3.classList.remove("mystyle");
   video1.classList.remove("mystyle");
   video2.classList.remove("mystyle");
