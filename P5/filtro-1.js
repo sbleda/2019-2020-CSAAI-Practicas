@@ -90,7 +90,7 @@ function imagen () {
 
     deslizador2.oninput = () => {
       ctx.drawImage(img, 0,0);
-      //-- Mostrar el nuevo valor del deslizador2
+      //-- Mostrar el nuevo valor del deslizador verde
       range_value2.innerHTML = deslizador2.value;
 
       //-- Obtener la imagen del canvas en pixeles
@@ -116,7 +116,7 @@ function imagen () {
     }
     deslizador3.oninput = () => {
       ctx.drawImage(img, 0,0);
-      //-- Mostrar el nuevo valor del deslizador3
+      //-- Mostrar el nuevo valor del deslizador azul
       range_value3.innerHTML = deslizador3.value;
 
       //-- Obtener la imagen del canvas en pixeles
