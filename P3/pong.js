@@ -30,6 +30,9 @@ var n = 0;
 
 function teclas(){
   manual.onclick = () => {
+    facil.disabled=true;
+    medio.disabled=true;
+    dificil.disabled=true;
     facil.classList.add("niveles");
     dificil.classList.add("niveles");
     medio.classList.add("niveles");
@@ -63,6 +66,9 @@ function teclas(){
     }
   }
   auto.onclick = () => {
+    facil.disabled=false;
+    medio.disabled=false;
+    dificil.disabled=false;
     facil.classList.remove("niveles");
     dificil.classList.remove("niveles");
     medio.classList.remove("niveles");
@@ -100,18 +106,18 @@ function teclas(){
       velo = 0.9;
       animate();
     }
+
+    function animate() {
+      if (raqI.y <= 400 && raqI.y >= 0){
+        raqI.y = bola.y*velo;
+      }
+      requestAnimationFrame(function() {
+        animate();
+      });
+    }
   }
 }
 
-function animate() {
-  if (raqI.y <= 400 && raqI.y >= 0){
-    raqI.y = bola.y*velo;
-  }
-  requestAnimationFrame(function() {
-    animate();
-  });
-
-}
 
 //-- Pintar todos los objetos en el canvas
 function draw() {
@@ -240,7 +246,7 @@ window.onkeyup = (e) => {
     //-- Quitar velocidad de la raqueta izq
     raqI.v = 0;
   }
-  
+
   //-- Quitar velocidad de la raqueta derecha
   if (e.key == "p" || e.key == "l") {
     raqD.v = 0;
