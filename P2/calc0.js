@@ -1,8 +1,5 @@
 console.log("Ejecutando JS...");
 
-
-console.log("Ejecutando JS...");
-
 resultado = document.getElementById("resultado")
 suma = document.getElementById("suma")
 multiplicacion = document.getElementById("multiplicacion")
