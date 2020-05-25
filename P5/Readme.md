@@ -9,3 +9,5 @@ Está el funcionamiento básico, pasar a grises y modificar las componentes de c
 Mejoras:
 He añadido un botón para aplicar a la imagen un filtro sepia, otro para aumentar el contraste, y otro para aplicar un filtro negativo (tardan bastante en cargar pero al final cargan).
 También hay dos botones más, espejo e invertir, que se aplican sobre la imagen original, y sobre ellos podrás aplicar los filtros anteriores (una vez invertida la iamgen puedes aplicar por ejemplo filtros de color, la imagen seguirá invertida).
+
+(Debe verse como en vista.png, en caso de no verse así, aumentar/disminuir el zoom de la pantalla)
