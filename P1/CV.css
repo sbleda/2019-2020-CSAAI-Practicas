@@ -10,7 +10,6 @@
   font-size: 20px;
 }
 
-
 #académica {
   background-image:linear-gradient(to bottom, #9999ff 13%, #ffccff 93%);
   color:black;
@@ -23,7 +22,6 @@
   display: inline-table;
   font-size: 20px;
 }
-
 
 #experiencia {
   background-image:linear-gradient(to bottom, #ccffff 0%, #ffcccc 108%);
@@ -38,7 +36,6 @@
   font-size: 20px;
 }
 
-
 #Habilidades {
   background-image:linear-gradient(to bottom, #9999ff 13%, #ffccff 93%);
   color:black;
@@ -51,7 +48,6 @@
   display: inline-table;
   font-size: 20px;
 }
-
 
 #Idiomas {
   background-image:linear-gradient(to bottom, #ccffff 0%, #ffcccc 108%);
