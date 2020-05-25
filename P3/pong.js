@@ -69,6 +69,7 @@ function teclas(){
     facil.disabled=false;
     medio.disabled=false;
     dificil.disabled=false;
+    manual.disabled=true;
     facil.classList.remove("niveles");
     dificil.classList.remove("niveles");
     medio.classList.remove("niveles");
